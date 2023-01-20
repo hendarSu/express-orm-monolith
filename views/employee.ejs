@@ -18,15 +18,28 @@
 
     <hr>
     <h1>Table Employee</h1>
-    <table>
+    <table border="1">
         <tr>
             <th>Name</th>
             <th>Alamat</th>
+            <th colspan="3">#</th>
+
         </tr>
         <% employees.forEach((data) => { %>
             <tr>
                 <td><%= data.name %></td>
                 <td><%= data.addres %></td>
+                <td>
+                    <a href="<%= /employee/+data.id %>">Detail</a>
+                </td>
+
+                <td>
+                    <a href="<%= /employee-update/+data.id %>">update</a>
+                </td>
+
+                <td>
+                    <a href="<%= '/api/employees/delete/'+ data.id %>">Delete</a>
+                </td>
             </tr>
         <%})%>
     </table>
